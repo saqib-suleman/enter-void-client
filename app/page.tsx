@@ -1,11 +1,6 @@
 "use client";
-import { gql, useQuery } from "@apollo/client";
-
-const HELLO = gql`
-  query sayHello {
-    sayHello
-  }
-`;
+import { useQuery } from "@apollo/client";
+import { HELLO } from "./queries";
 
 export default function Home() {
   const { data } = useQuery(HELLO);
