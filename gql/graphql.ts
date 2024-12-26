@@ -85,5 +85,11 @@ export type SayHelloQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type SayHelloQuery = { __typename?: 'Query', sayHello: string };
 
+export type SayheyQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SayheyQuery = { __typename?: 'Query', sayHello: string };
+
 
 export const SayHelloDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"sayHello"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"sayHello"}}]}}]} as unknown as DocumentNode<SayHelloQuery, SayHelloQueryVariables>;
+export const SayheyDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"sayhey"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"sayHello"}}]}}]} as unknown as DocumentNode<SayheyQuery, SayheyQueryVariables>;

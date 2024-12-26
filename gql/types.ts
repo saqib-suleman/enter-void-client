@@ -81,3 +81,8 @@ export type SayHelloQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type SayHelloQuery = { __typename?: 'Query', sayHello: string };
+
+export type SayheyQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SayheyQuery = { __typename?: 'Query', sayHello: string };

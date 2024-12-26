@@ -49,7 +49,7 @@ const httpLink = new HttpLink({
     const operationName = JSON.parse(options?.body as string).operationName;
     return fetch(
       `${uri}${operationName ? `?op=${operationName}` : ""}`,
-      options
+      options,
     );
   },
 });
