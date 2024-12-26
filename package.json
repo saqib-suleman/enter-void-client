@@ -8,7 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "check-types": "tsc --pretty --noEmit",
-    "check-lint": "eslint . \"./app/**/*.{ts,tsx,js}\"",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "postinstall": "husky install",
+    "pre-commit-script": "npx lint-staged && npm run check-types",
+    "test-all": "npm run format && npm run check-lint && npm run build",
     "generate": "graphql-codegen --require dotenv/config --config codegen.ts",
     "generate-w": "npm run generate --watch"
   },
@@ -36,17 +41,36 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "concurrently": "^9.1.0",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.2",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.37.3",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-unused-imports": "^4.1.4",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "eslint-config-next": "13.1.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "commitizen": "^4.3.0",
+    "commitlint": "^17.4.2",
+    "commitlint-config-gitmoji": "^2.2.10",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
     "postcss": "^8",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --write"
+    ]
   }
 }
